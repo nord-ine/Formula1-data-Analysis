@@ -1,1 +1,9 @@
-Ceci est un test 
+Ducoup ce qui nous reste à faire :
+
+- (Partie régression linéaire) Ajouter un coefficient de performance pour chaque pilote par rapport à son coéquipier (résultats de qualifications)
+
+- (Partie régression linéaire) Essayer de prédire la position finale du pilote à chaque tour
+
+- (Partie régression logistique) Améliorer la régression logistique pour avoir un plus grand nombre de True Positives
+
+- (Partie classification multiclasse) Créer un classificateur de pneus
