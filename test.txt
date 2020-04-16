@@ -7,3 +7,5 @@ Ducoup ce qui nous reste à faire :
 - (Partie régression logistique) Améliorer la régression logistique pour avoir un plus grand nombre de True Positives
 
 - (Partie classification multiclasse) Créer un classificateur de pneus
+
+J'ARRIVE PAS A MERGE NOR DANS MASTER
