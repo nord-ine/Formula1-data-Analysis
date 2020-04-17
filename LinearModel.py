@@ -23,12 +23,7 @@ class LinearModel():
         else: # MAE
             return np.absolute(predicted_labels-labels).mean()
 
-        # m = len(labels)
-        # mySum = 0
-        # for i in range(0,len(labels)-1):
-        #     mySum += np.power((predicted_labels[i]-labels[i]),2)
-        # mySum = (1.0/m)*mySum
-        # return np.sqrt(mySum)
+
 
 
     def gradient_descent(self,data,weights,labels,niter=100,speed=0.05,tol=0.00001,i=0):
