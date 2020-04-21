@@ -2,8 +2,9 @@ import numpy as np
 
 class LogisticClassifier():
 
-    def __init__(self):
-        pass
+    def __init__(self,threshold):
+        self.threshold = threshold
+        
 
     def sigmoid(self,x):
         '''
@@ -59,8 +60,7 @@ class LogisticClassifier():
             b = b - learning_rate*db
             if i % 100 == 0:
                 costs.append(cost)
-            if print_cost:
-                print ("Cost after iteration %i: %f\r" %(i, cost)),
+            
         
         params = {"w": w,
                 "b": b}
@@ -80,8 +80,8 @@ class LogisticClassifier():
         parameters, grads, costs = self.optimize(self.w,self.b,X_train,Y_train,num_iterations=num_iterations,learning_rate=learning_rate,print_cost=print_cost)
         self.w = parameters["w"]
         self.b = parameters["b"]
-        Y_prediction_train = self.predict(X_train)
-        print("\ntrain accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_train - Y_train)) * 100))
+        Y_prediction_train = self.predict(X_train).transpose()
+        print("train accuracy: {} % \n".format(100 - np.mean(np.abs(Y_prediction_train - Y_train)) * 100))
         d = {"costs": costs,
             "Y_prediction_train" : Y_prediction_train, 
             "learning_rate" : learning_rate,
@@ -100,9 +100,10 @@ class LogisticClassifier():
         w = self.w.reshape(X.shape[0], 1)
         A = self.sigmoid(np.dot(w.T,X)+self.b)
         for i in range(A.shape[1]):
-            if A[0][i] > 0.5:
+            if A[0][i] > self.threshold:
                 Y_prediction[0][i] = 1
             else:
                 Y_prediction[0][i] = 0
         assert(Y_prediction.shape == (1, m))
+        Y_prediction = Y_prediction.transpose()
         return Y_prediction
