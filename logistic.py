@@ -8,18 +8,18 @@ class LogisticClassifier():
 
     def sigmoid(self,x):
         '''
-        Retourne la fonction sigmoide qui nous permet d'exprimer une probabilité entre 0 et 1
+        Retourne la fonction sigmoide qui nous permet d'exprimer une probabilite entre 0 et 1
         '''
         return 1.0/(1+np.exp(-x))
 
     def propagate(self,w, b, X, Y):
         '''
-        In : w (numpy array) de dimension (n,1) : les poids affectés aux données
+        In : w (numpy array) de dimension (n,1) : les poids affectes aux donnees
             b (numpy array) de dimension (1,m) : le biais
-            X (numpy array) de dimension (n,m) : les données avec n features et m examples
+            X (numpy array) de dimension (n,m) : les donnees avec n features et m examples
             Y (numpy array) de dimension (1,m) : les labels
-        Out : grads {dw : np.array(n,1), db = np.array(1,m)} : dictionnaire avec la dérivée de w et b pour pouvoir mettre à jour les poids
-            cost (float) : le coût
+        Out : grads {dw : np.array(n,1), db = np.array(1,m)} : dictionnaire avec la derivee de w et b pour pouvoir mettre a jour les poids
+            cost (float) : le cout
         '''
         m = X.shape[1]
         A = self.sigmoid(np.dot(w.T, X)+b)
@@ -40,16 +40,16 @@ class LogisticClassifier():
     def optimize(self,w, b, X, Y, num_iterations, learning_rate, print_cost = False):
         '''
         Boucle principale de l'algorithme
-        In : w (numpy array) de dimension (n,1) : les poids affectés aux données
+        In : w (numpy array) de dimension (n,1) : les poids affectes aux donnees
             b (numpy array) de dimension (1,m) : le biais
-            X (numpy array) de dimension (n,m) : les données avec n features et m examples
+            X (numpy array) de dimension (n,m) : les donnees avec n features et m examples
             Y (numpy array) de dimension (1,m) : les labels
-            num_interations (int) : nombre d'itérations de l'algorithme
+            num_interations (int) : nombre d'iterations de l'algorithme
             learning_rate (float) : vitesse de convergence
-            print_cost (bool) : afficher ou pas le coût
+            print_cost (bool) : afficher ou pas le cout
         Out : params {w: np.array(n,1), b: np.array(1,m)} : les poids et le biais
-            grads {dw: np.array(n,1), db: np.array(1,m)} : les dérivées des poids et du biais
-            costs (list(float)) : l'historique des coûts
+            grads {dw: np.array(n,1), db: np.array(1,m)} : les derivees des poids et du biais
+            costs (list(float)) : l'historique des couts
         '''
         costs = []
         for i in range(num_iterations):
@@ -73,7 +73,7 @@ class LogisticClassifier():
 
     def fit(self,X_train, Y_train, num_iterations = 2000, learning_rate = 0.5, print_cost = False):
         '''
-        Création du modèle : on entraîne sur le training test et on teste sur le test set (bah ouais logique)
+        Creation du modele : on entraine sur le training test et on teste sur le test set (bah ouais logique)
         Retourne un dictionnaire avec toutes les informations
         '''
         self.w ,self.b = np.zeros((X_train.shape[0],1)),0
@@ -90,10 +90,10 @@ class LogisticClassifier():
         return d
     def predict(self,X):
         '''
-        In : w (numpy array) de dimension (n,1) : les poids affectés aux données
+        In : w (numpy array) de dimension (n,1) : les poids affectes aux donnees
             b (numpy array) de dimension (1,m) : le biais
-            X (numpy array) de dimension (n,m) : les données avec n features et m examples
-        Out : Y_prediction (numpy array) de dimension (1,m) : les labels prédits par l'algorithme
+            X (numpy array) de dimension (n,m) : les donnees avec n features et m examples
+        Out : Y_prediction (numpy array) de dimension (1,m) : les labels predits par l'algorithme
         '''
         m = X.shape[1]
         Y_prediction = np.zeros((1,m))

@@ -1,3 +1,4 @@
+# coding: utf-8
 import numpy as np
 from collections import Counter
 from collections import defaultdict
@@ -14,7 +15,7 @@ class DecisionTreeClassifier():
 
     def __init__(self,min_element_inNode,max_depth=10,max_iteration=100):
         self.max_depth = max_depth
-        self.min_element_inNode=min_element_inNode # minimum d'element dans un noeud passé en parametre dans le constructeur
+        self.min_element_inNode=min_element_inNode # minimum d'element dans un noeud passe en parametre dans le constructeur
         self.max_iteration = max_iteration
         self.max_features = 0 
 
