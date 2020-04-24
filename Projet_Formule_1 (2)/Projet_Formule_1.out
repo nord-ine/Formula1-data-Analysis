@@ -1,7 +1,0 @@
-\BOOKMARK [1][-]{section.1}{Projet Analyse de Donn\351es : Strat\350ge virtuel de Formule 1}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Nettoyage des datasets}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Cr\351ation de quelques fonctions utiles}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Pr\351diction du vainqueur d'un Grand Prix}{section.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.3.1}{Cr\351ation du mod\350le avec TensorFlow}{subsection.1.3}% 5
-\BOOKMARK [3][-]{subsubsection.1.3.2}{Cr\351ation du mod\350le \340 la mano}{subsection.1.3}% 6
-\BOOKMARK [2][-]{subsection.1.4}{Remplissage du dataset des pit-stops}{section.1}% 7
